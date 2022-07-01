@@ -13,7 +13,7 @@ public class ClientHandler implements Runnable{
     Socket Client;
     BufferedReader in;
     PrintWriter out;
-    Result result=new Result();
+    Result result=null;
 
 
     @Override
@@ -44,8 +44,7 @@ public class ClientHandler implements Runnable{
             try{
                 switch (s) {
                     default:
-                        Frase f1=new Frase(letterCounter(s),wordsCounter(s),replacerString(s));
-                        result.AggiungiFrase(f1);
+                        result = new Result(new Frase(letterCounter(s),wordsCounter(s),replacerString(s)));
                         out.println(gson.toJson(result));
                         break;
                 }
