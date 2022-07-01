@@ -65,14 +65,11 @@ public class ClientHandler implements Runnable{
     }
     private int wordsCounter(String s){
         int n=1;
-        String spazio=" ";
         for(int i=0;i<s.length();i++){
             char l=s.charAt(i);
             if (l == ' ') {
                 n++;
             }
-
-
         }
         return n;
         }
